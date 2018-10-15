@@ -1,0 +1,17 @@
+title: "fREW Schmidt's Cocktails"
+author:
+  name: "Arthur Axel fREW Schmidt"
+  twitter: frioux
+# indexes:
+#   tag: 'tags'
+baseURL: 'https://frioux.github.io/cocktails'
+paginate: 50
+preserveTaxonomyNames: true
+# q:
+#   post-facets:
+#     - roast_level
+#     - total_roast
+#     - first_crack
+#     - rating
+#     - start_weight
+#     - end_weight

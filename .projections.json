@@ -1,0 +1,17 @@
+{
+   "content/drinks/*.md": {
+      "type": "drink",
+      "template": [
+         "---",
+         "name: {blank|capitalize}",
+         "source:",
+         "based_on:",
+         "ingredients:",
+         "   Club Soda: 4oz",
+         "   Gin: 2oz",
+         "   Lemon Juice: 1oz",
+         "   Simple Syrup: 1tsp",
+         "---"
+      ]
+   }
+}

@@ -1,0 +1,57 @@
+#!/usr/bin/perl
+
+use 5.22.0;
+use warnings;
+
+use experimental 'postderef';
+
+my $from = shift;
+my $to = shift;
+
+use YAML::Syck 'Load', 'Dump';
+
+my $from_file = "content/drinks/$from.md";
+open my $fh, '<', $from_file
+   or die "Couldn't open $from_file: $!";
+
+my $cnt = 0;
+my $yaml = "";
+while (<$fh>) {
+  $cnt ++ if $_ eq "---\n";
+
+  last if $cnt > 1;
+  $yaml .= $_;
+}
+
+my $markdown = do { local $/; <$fh> } || "";
+
+close $fh
+  or die "could not close $from_file: $!";
+
+my $data;
+local $@;
+my $success = eval {
+  $data = Load($yaml);
+  1;
+};
+
+die "error processing $from_file: $@\n"
+  unless $success;
+
+$data->{based_on} = $from;
+$data->{name} = "";
+
+if ($to) {
+   $data->{name} = join ' ', map ucfirst $_, split qr/-/, $to;
+
+   my $to_file = "content/drinks/$to.md";
+   open my $fh, '>', $to_file or
+     die "Couldn't open $to_file: $!\n";
+
+   print $fh Dump($data) . "---\n$markdown";
+
+   close $fh or
+     die "Couldn't close $to_file: $!\n";
+} else {
+   print Dump($data) . "---\n$markdown";
+}
