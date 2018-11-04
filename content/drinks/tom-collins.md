@@ -1,10 +1,9 @@
 ---
 name: Tom Collins
-# source: some book, website, etc
-# based_on: tom-collins
+source: 500 Cocktails, page 27
 ingredients:
    Club Soda: 4oz
    Gin: 2oz
    Lemon Juice: 1oz
-   Simple Syrup: 1tsp
+   Simple Syrup: 1tbsp
 ---
