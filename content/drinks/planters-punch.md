@@ -1,5 +1,5 @@
 ---
-name: Planters Punch
+name: Planter's Punch
 source: 500 cocktails, page 196
 ingredients:
    Lime Juice: 2tbsp
