@@ -8,3 +8,6 @@ ingredients:
    fresh lime juice: 1oz
    ginger beer: 1oz
 ---
+
+Shake all but the ginger beer with ice. Strain over fresh ice in a Collins
+glass. Top with ginger beer.
