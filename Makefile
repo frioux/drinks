@@ -22,4 +22,4 @@ public: | public/.git
 
 public/.git:
 	git init public
-	cd public && git remote add origin gh:frioux/clog
+	cd public && git remote add origin gh:frioux/drinks
